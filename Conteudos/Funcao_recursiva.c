@@ -21,7 +21,7 @@ int fibo (int n){
     return 1;
   }
   else {
-    // fibo (posicao) ele recebe a posição
+    // fibo (posicao) -> ele recebe a posição
 
     // a função faz o calculo mas o fibo (como função faz a soma)
     return fibo(n - 1) + fibo(n - 2);;

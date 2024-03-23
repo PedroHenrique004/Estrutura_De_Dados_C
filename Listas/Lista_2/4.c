@@ -7,6 +7,8 @@ int main() {
 
     printf("Digite uma frase de até 50 caracteres: \n");
     fgets(s, 51, stdin); 
+    // o fgets le uma string
+
 
     strupr(s);
 
@@ -26,7 +28,7 @@ int main() {
 // }
 
 // //Toupper vem da biblioteca ctype e é responsavel por passar os caracteres para maiusculo
-// // o fgets le uma string
+
 
 // int main() {
 //     char s[51];
