@@ -11,7 +11,7 @@ int main(){
 
     DATA hoje = {06, 04, 2024};
 
-    printf("%d de %d de %d", hoje.dia, hoje.mes, hoje.ano);
+    printf("%d do %d de %d", hoje.dia, hoje.mes, hoje.ano);
     
 
     return 0;
