@@ -1,21 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include "agenda.h"
+#include "funcoes.c"
 
-typedef struct Pessoa {
-    char nome[45];
-    char telefone[21];
-    char email[100];
-    char tipo_telefone[20]; // celular, fixo, residência ou trabalho
-    int dia;
-    int mes;
-    int ano;
-} AGENDA;
-
-static AGENDA contato[5];
-static int qtd_contatos = 0; // Quantidade atual de contatos
+AGENDA contato[5];
+int qtd_contatos = 0; 
 
 void salvaContato();
+void alterarContato();
+void buscarContato();
+void apagarContato();
 void listaContatos();
 void ordenaPorNome();
 bool verificaNomeDuplicado(char *nome);
@@ -63,4 +58,3 @@ int main() {
 
     return 0;
 }
-

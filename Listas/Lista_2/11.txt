@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+// Definindo a estrutura Horario
+typedef struct {
+    int hora;
+    int minuto;
+    int segundo;
+} Horario;
+
+int main() {
+    // Criando e inicializando uma variável do tipo Horario
+    Horario agora = {10, 30, 45};
+
+    // Exibindo o valor no formato "99:99:99"
+    printf("Horário atual: %02d:%02d:%02d\n", agora.hora, agora.minuto, agora.segundo);
+
+    return 0;
+}

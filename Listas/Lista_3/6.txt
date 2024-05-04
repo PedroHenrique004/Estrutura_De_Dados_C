@@ -1,0 +1,7 @@
+Se as strings têm tamanhos bem diferentes, um vetor de ponteiros pode ser melhor porque cada string só usa o espaço que realmente precisa. Agora, se você usar uma matriz de caracteres, vai ter que fazer cada linha do tamanho da maior string. Aí pode acabar sobrando muito espaço vazio se a maioria das strings for bem menor.
+
+Agora, se você precisa mudar as strings depois, tipo alterar algum caractere, aí uma matriz de caracteres é melhor. Isso porque as strings em C são imutáveis, ou seja, você não pode mudar os caracteres de uma string. Mas se você guardar as strings numa matriz de caracteres, aí pode mudar os caracteres sem problemas.
+
+E tem também a questão do desempenho. Normalmente, acessar elementos numa matriz de caracteres é mais rápido do que desreferenciar um ponteiro. Então, se a velocidade for importante, talvez seja melhor usar uma matriz de caracteres.
+
+Então, no fim das contas, a melhor escolha depende do que você precisa fazer no seu programa. Você tem que pensar no tamanho das strings, se precisa mudar elas depois e também na questão do desempenho. Espero que isso ajude!

@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int strpos(char s[], char c) {
+    int i = 0;
+    while(s[i] != '\0') {
+        if(s[i] == c) {
+            return i; 
+        }
+        i++;
+    }
+
+    return -1;
+}
+
+int main() {
+    char s[] = "ola muindo";
+    char c = 'i';
+
+    int pos = strpos(s, c);
+
+    if(pos != -1) {
+        printf("O caractere '%c' foi encontrado na posicao %d.\n", c, pos);
+    } else {
+        printf("O caractere '%c' nao foi encontrado na string.\n", c);
+    }
+
+    return 0;
+}

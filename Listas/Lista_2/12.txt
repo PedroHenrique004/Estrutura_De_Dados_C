@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+// Definindo a estrutura Horario
+typedef struct {
+    int hora;
+    int minuto;
+    int segundo;
+} Horario;
+
+// Definindo a estrutura Data
+typedef struct {
+    int dia;
+    int mes;
+    int ano;
+} Data;
+
+// Definindo a estrutura Voo
+typedef struct {
+    char origem[50];
+    char destino[50];
+    Data dataPartida;
+    Horario horarioPartida;
+    Data dataChegada;
+    Horario horarioChegada;
+} Voo;
+
+int main() {
+    // Criando e inicializando uma variável do tipo Voo
+    Voo voo1;
+
+    // Atribuindo valores aos membros usando a notação de ponto
+    strcpy(voo1.origem, "São Paulo");
+    strcpy(voo1.destino, "Rio de Janeiro");
+
+    voo1.dataPartida.dia = 10;
+    voo1.dataPartida.mes = 12;
+    voo1.dataPartida.ano = 2022;
+
+    voo1.horarioPartida.hora = 14;
+    voo1.horarioPartida.minuto = 30;
+    voo1.horarioPartida.segundo = 0;
+
+    voo1.dataChegada.dia = 10;
+    voo1.dataChegada.mes = 12;
+    voo1.dataChegada.ano = 2022;
+
+    voo1.horarioChegada.hora = 16;
+    voo1.horarioChegada.minuto = 15;
+    voo1.horarioChegada.segundo = 0;
+
+    // Exibindo os valores
+    printf("Voo de %s para %s\n", voo1.origem, voo1.destino);
+    printf("Partida: %02d/%02d/%04d às %02d:%02d:%02d\n", voo1.dataPartida.dia, voo1.dataPartida.mes, voo1.dataPartida.ano, voo1.horarioPartida.hora, voo1.horarioPartida.minuto, voo1.horarioPartida.segundo);
+    printf("Chegada: %02d/%02d/%04d às %02d:%02d:%02d\n", voo1.dataChegada.dia, voo1.dataChegada.mes, voo1.dataChegada.ano, voo1.horarioChegada.hora, voo1.horarioChegada.minuto, voo1.horarioChegada.segundo);
+
+    return 0;
+}

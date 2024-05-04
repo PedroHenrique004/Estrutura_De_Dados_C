@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void minimax(float v[], int n, float *min, float *max) {
+    *min = v[0];
+    *max = v[0];
+
+    for(int i = 1; i < n; i++) {
+        if(v[i] < *min) *min = v[i];
+        if(v[i] > *max) *max = v[i];
+    }
+}
+
+int main() {
+    float v[] = {1.2, 2.3, 3.4, 4.5, 5.6};
+    float min, max;
+    minimax(v, 5, &min, &max);
+    printf("Min: %.2f, Max: %.2f\n", min, max);
+    return 0;
+}
+

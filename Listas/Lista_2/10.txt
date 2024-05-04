@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    char tabuleiro[3][3];
+    int i, j;
+
+    // Inicializa o tabuleiro com espaços vazios
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            tabuleiro[i][j] = ' ';
+        }
+    }
+
+    // Exibe o tabuleiro
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
+            printf("| %c ", tabuleiro[i][j]);
+        }
+        printf("|\n");
+        if(i < 2) {
+            printf("|---|---|---|\n");
+        }
+    }
+
+    return 0;
+}

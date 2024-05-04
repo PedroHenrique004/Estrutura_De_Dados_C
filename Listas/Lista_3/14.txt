@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+typedef struct {
+    char titulo[100];
+    char autor[100];
+    int anoPublicacao;
+} Livro;
+
+void preencheLivro(Livro* livro) {
+    printf("Digite o título do livro: ");
+    fgets(livro->titulo, 100, stdin);
+    livro->titulo[strcspn(livro->titulo, "\n")] = 0;  // remove o '\n' do final
+
+    printf("Digite o nome do autor: ");
+    fgets(livro->autor, 100, stdin);
+    livro->autor[strcspn(livro->autor, "\n")] = 0;  // remove o '\n' do final
+
+    printf("Digite o ano de publicação: ");
+    scanf("%d", &livro->anoPublicacao);
+    getchar();  // remove o '\n' do buffer
+}
+
+void preencheTabela(Livro* tabela, int n) {
+    for(int i = 0; i < n; i++) {
+        printf("Preenchendo o livro %d:\n", i + 1);
+        preencheLivro(&tabela[i]);
+    }
+}
+
+int main() {
+    int n = 3;
+    Livro tabela[n];
+    preencheTabela(tabela, n);
+    for(int i = 0; i < n; i++) {
+        printf("Livro %d:\nTítulo: %s\nAutor: %s\nAno de Publicação: %d\n\n", i + 1, tabela[i].titulo, tabela[i].autor, tabela[i].anoPublicacao);
+    }
+    return 0;
+}

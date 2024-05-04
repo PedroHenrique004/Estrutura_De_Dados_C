@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include "agenda.h"
+
+bool verificaNomeDuplicado(char *nome);
 
 void salvaContato() {
     if (qtd_contatos >= 5) {
@@ -27,8 +33,8 @@ void salvaContato() {
     printf("O contato de %s foi salvo com sucesso\n", novo_contato.nome);
 }
 
-void alterarContato() {
 
+void alterarContato() {
     int posicao;
     char opcao[2];
     char novo_valor[100];
@@ -127,7 +133,6 @@ void apagarContato() {
         printf("Operação cancelada.\n");
     }
 }
-
 
 void listaContatos() {
     for (int i = 0; i < qtd_contatos; i++) {

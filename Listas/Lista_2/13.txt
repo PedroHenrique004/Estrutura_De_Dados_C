@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+#define NUM_PESSOAS 5
+
+// Função para preencher a agenda com os dados de 5 pessoas
+void preencherAgenda(PESSOA agenda[]) {
+    int i;
+    for(i = 0; i < NUM_PESSOAS; i++) {
+        printf("Digite o nome da pessoa %d: ", i + 1);
+        fgets(agenda[i].nome, 50, stdin);
+        agenda[i].nome[strcspn(agenda[i].nome, "\n")] = 0;  // Remove o '\n' do final
+
+        printf("Digite o telefone da pessoa %d: ", i + 1);
+        fgets(agenda[i].telefone, 15, stdin);
+        agenda[i].telefone[strcspn(agenda[i].telefone, "\n")] = 0;  // Remove o '\n' do final
+    }
+}
+
+// Função para procurar na agenda o telefone de uma determinada pessoa
+char* procurarTelefone(PESSOA agenda[], char* nome) {
+    int i;
+    for(i = 0; i < NUM_PESSOAS; i++) {
+        if(strcmp(agenda[i].nome, nome) == 0) {
+            return agenda[i].telefone;
+        }
+    }
+    return NULL;
+}
+
+int main() {
+    PESSOA agenda[NUM_PESSOAS];
+    char nome[50];
+    char* telefone;
+
+    // Preenche a agenda
+    preencherAgenda(agenda);
+
+    // Procura o telefone de uma pessoa
+    printf("Digite o nome da pessoa cujo telefone você quer procurar: ");
+    fgets(nome, 50, stdin);
+    nome[strcspn(nome, "\n")] = 0;  // Remove o '\n' do final
+
+    telefone = procurarTelefone(agenda, nome);
+    if(telefone != NULL) {
+        printf("O telefone de %s é %s\n", nome, telefone);
+    } else {
+        printf("Não foi encontrada nenhuma pessoa com o nome %s\n", nome);
+    }
+
+    return 0;
+}

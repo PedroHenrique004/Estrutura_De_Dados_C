@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+char* strchr(char* s, char c) {
+    while(*s) {
+        if(*s == c) {
+            return s;
+        }
+        s++;
+    }
+    return NULL;
+}
+
+int main() {
+    char s[] = "Olá, mundo!";
+    char c = 'm';
+    char* resultado = strchr(s, c);
+    if(resultado) {
+        printf("O caractere '%c' foi encontrado na posição: %ld\n", c, resultado - s);
+    } else {
+        printf("O caractere '%c' não foi encontrado na string.\n", c);
+    }
+    return 0;
+}

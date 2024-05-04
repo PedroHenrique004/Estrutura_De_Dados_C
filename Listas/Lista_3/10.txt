@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* strsub(char* s, int i, int n) {
+    char* sub = malloc((n + 1) * sizeof(char));
+    strncpy(sub, &s[i], n);
+    sub[n] = '\0';
+    return sub;
+}
+
+int main() {
+    char s[] = "Olá, mundo!";
+    char* sub = strsub(s, 2, 5);
+    printf("%s\n", sub);
+    free(sub);
+    return 0;
+}

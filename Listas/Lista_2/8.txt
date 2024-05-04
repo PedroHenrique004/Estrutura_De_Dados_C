@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+void strins(char s[], char c, int p) {
+    int len = strlen(s);
+    int i;
+
+    if(p < 0 || p > len) {
+        p = len;
+    }
+
+    for(i = len; i >= p; i--) {
+        s[i + 1] = s[i];
+    }
+
+    s[p] = c;
+}
+
+int main() {
+    char s[20] = "facilidade";
+    char c = '!';
+    int p = 3;
+
+    strins(s, c, p);
+
+    printf("Aqui esta: %s\n", s);
+
+    return 0;
+}

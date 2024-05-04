@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+typedef struct Node {
+    char value;
+    struct Node* next;
+} Node;
+
+int main() {
+    Node t = {'A', NULL};
+    Node s = {'s', &t};
+    Node r = {'r', &s};
+    Node q = {'q', &r};
+    Node p = {'p', &q};
+
+    Node* nodes[] = {&p, &q, &r, &s, &t};
+
+    for(int i = 0; i < 5; i++) {
+        if(nodes[i]->next != NULL) {
+            printf("%c\n", nodes[i]->next->value);
+        }
+    }
+
+    return 0;
+}

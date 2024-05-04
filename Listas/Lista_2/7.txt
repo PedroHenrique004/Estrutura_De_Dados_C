@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void strdel(char s[], int p) {
+    int i;
+
+    if(p < 0 || p >= strlen(s)) {
+        return;
+    }
+
+    for(i = p; s[i] != '\0'; i++) {
+        s[i] = s[i + 1];
+    }
+}
+
+int main() {
+    char s[] = "ola mundo";
+    int p = 3;
+
+    strdel(s, p);
+
+    printf("Aqui esta: %s\n", s);
+
+    return 0;
+}

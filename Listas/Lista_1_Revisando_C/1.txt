@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+
+    printf("%d %d %d %d", !3, !0, #+'a'>'b'+2 && ! 'b', 1 || !2 && !3);
+
+
+    return 0;
+}
+
+/*
+    Deu erro de compilação
+    
+    mas se tirarmos os caracteres invalidos ficaria:
+    printf("%d %d %d %d", !3, !0, 'a'>'b', 1 || !2 && !3);
+
+    exibindo 1010
+*/

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void strcat(char s[], char t[]) {
+    int i = 0, j = 0;
+
+    // Encontre o final da string s
+    while(s[i] != '\0') {
+        i++;
+    }
+
+    // Copie a string t para o final de s
+    while((s[i++] = t[j++]) != '\0');
+
+}
+
+int main() {
+    char x[20] = "facil";
+    char y[] = "idade";
+
+    strcat(x, y);
+
+    printf("Aqui esta: %s\n", x);
+
+    return 0;
+}
